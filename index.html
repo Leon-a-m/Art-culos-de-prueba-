@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Certeza, duda y deseo en lo que lees. Un artículo interactivo de Sinapsis.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lo que el verbo delata">
+<meta property="og:description" content="Certeza, duda y deseo en lo que lees. Un artículo interactivo de Sinapsis.">
+<meta property="og:image" content="https://leon-a-m.github.io/sinapsis-articulos/img/og.jpg">
+<meta property="og:url" content="https://leon-a-m.github.io/sinapsis-articulos/">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Lo que el verbo delata</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo:wght@500;700;800&family=Bowlby+One&family=Caveat:wght@600;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Special+Elite&display=swap">
+<style>
+/* Concepto: un teatro de papel. Cada idea es un recorte que se pega, se voltea o se mueve;
+   los tres modos del verbo tienen su propio papel: azul firme (certeza), periódico (duda), amarillo (deseo). */
+:root{
+  --desk:#E7DFD0; --scrap:#F8F3E8; --ink:#1F1B17; --muted:#5E564B; --rule:#CDBFA8; --kraft:#C49C6C;
+  --cert:#3E5F8C; --on-cert:#FFFFFF; --duda:#D6CFC1; --on-duda:#2D2924; --deseo:#E4B947; --on-deseo:#2B220C;
+  --duda-mark:#A9A193;
+  --brick:#A6422E; --on-brick:#FFF6EC; --on-kraft:#21170C; --ok:#2F7A4E; --bad:#A6422E;
+  --tape:rgba(255,251,238,.62); --shadow:rgba(60,40,15,.22); --bolita:#3E7FD0; --on-bolita:#FFFFFF;
+  --chat-ellos:#EFE6D3; --chat-tu:#3E5F8C; --on-chat-tu:#FFFFFF; --frame:#FFFFFF; --stage-dim:1;
+
+  --f-display:"Abril Fatface","Rozha One",Georgia,serif;
+  --f-block:"Bowlby One","Arial Black",Impact,sans-serif;
+  --f-type:"Special Elite","Courier New",monospace;
+  --f-body:"Literata",Georgia,"Times New Roman",serif;
+  --f-ui:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-hand:"Caveat","Comic Sans MS",cursive;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --desk:#1D1A17; --scrap:#2B2723; --ink:#EEE7DB; --muted:#ADA395; --rule:#4A4239; --kraft:#A9855A;
+    --cert:#6E93C6; --on-cert:#0F1724; --duda:#3B3631; --on-duda:#E6DFD2; --deseo:#E2C05E; --on-deseo:#231B07; --duda-mark:#7E766A;
+    --brick:#D9775F; --on-brick:#1D1A17; --on-kraft:#1D1A17; --ok:#6CC08F; --bad:#E08770;
+    --tape:rgba(255,251,238,.16); --shadow:rgba(0,0,0,.5); --bolita:#5A9BE6; --on-bolita:#0B1424;
+    --chat-ellos:#37312B; --chat-tu:#6E93C6; --on-chat-tu:#0F1724; --frame:#E9E4DA; --stage-dim:.88; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --desk:#1D1A17; --scrap:#2B2723; --ink:#EEE7DB; --muted:#ADA395; --rule:#4A4239; --kraft:#A9855A;
+  --cert:#6E93C6; --on-cert:#0F1724; --duda:#3B3631; --on-duda:#E6DFD2; --deseo:#E2C05E; --on-deseo:#231B07; --duda-mark:#7E766A;
+  --brick:#D9775F; --on-brick:#1D1A17; --on-kraft:#1D1A17; --ok:#6CC08F; --bad:#E08770;
+  --tape:rgba(255,251,238,.16); --shadow:rgba(0,0,0,.5); --bolita:#5A9BE6; --on-bolita:#0B1424;
+  --chat-ellos:#37312B; --chat-tu:#6E93C6; --on-chat-tu:#0F1724; --frame:#E9E4DA; --stage-dim:.88; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--desk); color:var(--ink); font-family:var(--f-body); font-size:18px; line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:clip}
+body::before{content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.33; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .28  0 0 0 0 .2  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) body::before{mix-blend-mode:screen; opacity:.12} }
+:root[data-theme="dark"] body::before{mix-blend-mode:screen; opacity:.12}
+main{position:relative; z-index:1}
+img{max-width:100%; height:auto; display:block}
+button{font:inherit; color:inherit}
+:focus-visible{outline:3px solid var(--bolita); outline-offset:3px; border-radius:4px}
+.col{max-width:40rem; margin-inline:auto; padding-inline:clamp(16px,5vw,28px)}
+p{margin:0 0 1.1em; hyphens:auto; -webkit-hyphens:auto}
+strong{font-weight:600}
+.bloque{padding-block:28px}
+.limpiar{clear:both}
+.capitular::first-letter{font-family:var(--f-display); float:left; font-size:4.1em; line-height:.82; padding:.08em .1em 0 0; color:var(--brick)}
+h2.seccion{font-family:var(--f-display); font-weight:400; font-size:clamp(1.9rem,6vw,2.6rem); line-height:1.08; margin:0 0 .5em; text-wrap:balance}
+.lead-ui{font-family:var(--f-ui); font-weight:800; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 .4em}
+
+/* ---------- progreso ---------- */
+.progreso{position:fixed; left:0; right:0; top:0; height:calc(6px + env(safe-area-inset-top,0px)); z-index:40; pointer-events:none}
+.progreso i{display:block; height:100%; width:100%; transform-origin:left; transform:scaleX(0); background:linear-gradient(90deg,var(--cert),var(--duda-mark) 50%,var(--deseo)); box-shadow:0 1px 3px var(--shadow)}
+
+/* ---------- portada: teatro de papel por capas ---------- */
+.escenario{position:relative; width:100%; aspect-ratio:10/16; max-height:none; overflow:hidden; background:#E4DACA url(img/papel.webp) center/cover; filter:brightness(var(--stage-dim));
+  --sil-x:-9%; --sil-y:48.5%; --sil-w:58%;
+  --az-x:46%; --az-y:49.5%; --az-w:45%;
+  --ra-x:43%; --ra-y:69%; --ra-w:54%;
+  --es-x:50%; --es-y:83%; --es-w:26%}
+.capa{position:absolute; will-change:transform}
+.capa img{width:100%; filter:drop-shadow(0 6px 8px rgba(50,35,15,.32)) drop-shadow(0 1px 1px rgba(50,35,15,.25))}
+.c-sil{left:var(--sil-x); top:var(--sil-y); width:var(--sil-w)}
+.c-az{left:var(--az-x); top:var(--az-y); width:var(--az-w)}
+.c-ra{left:var(--ra-x); top:var(--ra-y); width:var(--ra-w)}
+.c-es{left:var(--es-x); top:var(--es-y); width:var(--es-w)}
+.pieza{display:block; position:relative}
+.c-sil .pieza{animation:deslizar 1s cubic-bezier(.2,.8,.2,1) both}
+.burbuja{border:0; padding:0; background:none; cursor:pointer; display:block; width:100%; text-align:center}
+.burbuja .pieza{transform-origin:0% 100%; animation:brotar .75s cubic-bezier(.3,1.6,.5,1) both, flotar 6s ease-in-out infinite}
+.c-az .pieza{animation-delay:.55s, 1.6s}
+.c-ra .pieza{transform-origin:0% 50%; animation-delay:.8s, 2.1s; animation-duration:.75s, 7s}
+.c-es .pieza{transform-origin:20% 0%; animation-delay:1.05s, 1.9s; animation-duration:.75s, 5.4s}
+.etiqueta{position:absolute; pointer-events:none; line-height:1; white-space:nowrap}
+.c-az .etiqueta{left:50%; top:44%; transform:translate(-50%,-50%) rotate(-4deg); font-family:var(--f-block); font-size:clamp(1rem,5.4vw,1.9rem); color:#FFFFFF; text-shadow:0 2px 0 rgba(0,0,0,.25)}
+.c-ra .etiqueta{left:58%; top:50%; transform:translate(-50%,-50%) rotate(2deg); font-family:var(--f-type); font-size:clamp(1rem,5vw,1.8rem); color:#1F1B17; background:rgba(248,243,232,.8); padding:.05em .3em}
+.c-es .etiqueta{left:50%; top:56%; transform:translate(-50%,-50%) rotate(-6deg); font-family:var(--f-display); font-size:clamp(.85rem,3.9vw,1.4rem); color:#2B220C}
+.toca{font-family:var(--f-hand); font-size:clamp(1.1rem,4.6vw,1.5rem); color:#3B2E20; position:absolute; right:4%; bottom:2.2%; transform:rotate(-3deg); pointer-events:none}
+@keyframes deslizar{from{transform:translateY(7%)}to{transform:none}}
+@keyframes brotar{from{transform:scale(.18) rotate(-14deg)}to{transform:none}}
+@keyframes flotar{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-2.5%) rotate(1.2deg)}}
+
+.titulo{position:absolute; z-index:5; left:clamp(16px,5vw,28px); right:clamp(16px,5vw,28px); top:clamp(18px,5vw,36px); display:flex; flex-direction:column; align-items:flex-start; gap:8px}
+.kicker{font-family:var(--f-type); font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:#5E564B; background:#F8F3E8; padding:4px 10px; transform:rotate(-1.5deg); box-shadow:0 2px 4px rgba(60,40,15,.22)}
+h1.rescate{margin:0; display:flex; flex-wrap:wrap; gap:6px 8px; line-height:1; font-weight:400}
+.rec{display:inline-block; padding:.12em .28em .16em; box-shadow:0 3px 6px rgba(60,40,15,.25); transform:rotate(var(--r)); animation:caer .7s cubic-bezier(.2,.9,.3,1.3) both}
+.rec:nth-child(1){font-family:var(--f-display); font-size:clamp(2.2rem,10vw,3.2rem); background:#F8F3E8; color:#1F1B17; --r:-3deg}
+.rec:nth-child(2){font-family:var(--f-block); font-size:clamp(1.8rem,8.4vw,2.6rem); background:#3E5F8C; color:#FFFFFF; --r:2deg; animation-delay:.08s}
+.rec:nth-child(3){font-family:var(--f-type); font-size:clamp(2rem,9vw,2.9rem); background:#D6CFC1; color:#2D2924; --r:-1deg; animation-delay:.16s}
+.rec:nth-child(4){font-family:var(--f-display); font-size:clamp(2.6rem,12vw,3.8rem); background:#E4B947; color:#2B220C; --r:3deg; animation-delay:.24s}
+.rec:nth-child(5){font-family:var(--f-block); font-size:clamp(2.7rem,12.6vw,4rem); background:#A6422E; color:#FFF6EC; --r:-2deg; animation-delay:.32s}
+@keyframes caer{from{transform:translateY(-18px) rotate(calc(var(--r) * -3)) scale(1.08)} to{transform:rotate(var(--r))}}
+.subtitulo{font-family:var(--f-ui); font-weight:700; font-size:1rem; background:#C49C6C; color:#21170C; padding:8px 14px; transform:rotate(-.6deg); box-shadow:0 2px 5px rgba(60,40,15,.25); position:relative; margin-top:4px}
+.cinta{position:absolute; width:64px; height:20px; background:rgba(255,251,238,.62); top:-9px; left:calc(50% - 32px); transform:rotate(-4deg)}
+.bajo-portada{padding-top:16px}
+.dificultad{display:inline-flex; align-items:center; gap:12px; background:var(--scrap); padding:9px 16px 9px 14px; box-shadow:0 3px 8px var(--shadow); transform:rotate(-1deg); position:relative}
+.dificultad::before{content:""; position:absolute; width:46px; height:16px; background:var(--tape); top:-8px; left:-10px; transform:rotate(-24deg)}
+.dif-label{font-family:var(--f-ui); font-weight:800; font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+.dif-barras{display:inline-flex; align-items:flex-end; gap:4px; height:22px}
+.dif-barras i{display:block; width:9px; background:var(--brick); box-shadow:0 1px 2px var(--shadow)}
+.dif-barras i:nth-child(1){height:40%; transform:rotate(-3deg)} .dif-barras i:nth-child(2){height:70%; transform:rotate(2deg)} .dif-barras i:nth-child(3){height:100%; transform:rotate(-2deg)}
+.dif-nivel{font-family:var(--f-block); font-size:1.15rem; line-height:1; color:var(--brick)}
+
+@media (min-width:820px){
+  .escenario{aspect-ratio:3/2; max-height:92vh;
+    --sil-x:6%; --sil-y:6%; --sil-w:40%;
+    --az-x:45%; --az-y:21%; --az-w:23%;
+    --ra-x:43.5%; --ra-y:43%; --ra-w:33%;
+    --es-x:45%; --es-y:62%; --es-w:17%}
+  .titulo{left:auto; right:clamp(24px,4vw,64px); top:auto; bottom:clamp(28px,5vw,72px); align-items:flex-end; max-width:36%}
+  h1.rescate{justify-content:flex-end}
+  .toca{right:auto; left:47%; bottom:3%}
+}
+
+/* ---------- conversación ---------- */
+.chat{margin:8px 0 28px; background:var(--scrap); box-shadow:0 10px 24px var(--shadow); transform:rotate(-.4deg)}
+.chat-cab{display:flex; align-items:center; gap:10px; padding:12px 14px; border-bottom:2px dashed var(--rule)}
+.chat-cab .av{width:38px; height:38px; border-radius:50%; background:var(--kraft); color:var(--on-kraft); display:grid; place-items:center; font-family:var(--f-block); font-size:1rem}
+.chat-cab b{font-family:var(--f-ui); font-weight:800; font-size:1rem; display:block; line-height:1.2}
+.chat-cab span{font-family:var(--f-ui); font-size:.8rem; color:var(--muted)}
+.chat-cuerpo{display:flex; flex-direction:column; gap:10px; padding:16px 14px}
+.msg{max-width:84%; font-family:var(--f-ui); font-size:1rem; line-height:1.4; padding:10px 14px; box-shadow:0 2px 4px var(--shadow); animation:aparecer .35s cubic-bezier(.3,1.4,.5,1) both}
+.msg.ellos{align-self:flex-start; background:var(--chat-ellos); border-radius:4px 16px 16px 16px; transform:rotate(-.6deg)}
+.msg.tu{align-self:flex-end; background:var(--chat-tu); color:var(--on-chat-tu); border-radius:16px 4px 16px 16px; transform:rotate(.5deg)}
+.msg.escribiendo{display:flex; gap:5px; padding:14px}
+.msg.escribiendo i{width:8px; height:8px; border-radius:50%; background:var(--muted); animation:punto 1s infinite}
+.msg.escribiendo i:nth-child(2){animation-delay:.15s}.msg.escribiendo i:nth-child(3){animation-delay:.3s}
+@keyframes punto{0%,100%{transform:translateY(0); opacity:.4}50%{transform:translateY(-4px); opacity:1}}
+@keyframes aparecer{from{transform:scale(.7); opacity:.2}to{opacity:1}}
+.opciones-chat{display:flex; gap:8px; justify-content:flex-end; flex-wrap:wrap; padding:0 14px 16px}
+.opciones-chat button{font-family:var(--f-ui); font-weight:800; font-size:1rem; padding:10px 16px; border-radius:999px; border:2px solid var(--chat-tu); background:transparent; color:var(--ink); cursor:pointer}
+.opciones-chat button:hover{background:color-mix(in srgb,var(--chat-tu) 14%,transparent)}
+
+.polaroid{margin:8px auto 30px; max-width:320px; background:var(--scrap); padding:12px 12px 8px; box-shadow:0 8px 18px var(--shadow); transform:rotate(-2.2deg); position:relative}
+.polaroid figcaption{font-family:var(--f-hand); font-size:1.45rem; line-height:1.15; text-align:center; padding:10px 4px 2px}
+.polaroid .cinta{background:var(--tape)}
+
+/* ---------- bolitas ---------- */
+.bolita{float:right; shape-outside:circle(50%); width:48px; height:48px; margin:2px 0 8px 14px; border-radius:50%; border:0; cursor:pointer; background:var(--bolita); color:var(--on-bolita); display:grid; place-items:center; box-shadow:0 4px 0 rgba(0,0,0,.18), 0 6px 14px var(--shadow); animation:latir 2.6s ease-in-out infinite}
+.bolita.izq{float:left; margin:2px 14px 8px 0}
+.bolita svg{width:24px; height:24px}
+.bolita[data-kind="quiz"]{background:var(--brick); color:var(--on-brick)}
+.bolita[data-kind="advice"]{background:var(--ok); color:var(--on-cert)}
+.bolita.vista{animation:none; opacity:.8}
+@keyframes latir{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.velo{position:fixed; inset:0; background:rgba(20,14,8,.5); z-index:60; display:flex; align-items:flex-end; justify-content:center}
+.hoja{width:min(560px,100%); max-height:86vh; overflow:auto; background:var(--scrap); color:var(--ink); border-radius:18px 18px 0 0; padding:22px clamp(16px,5vw,26px) calc(22px + env(safe-area-inset-bottom,0px)); box-shadow:0 -10px 30px var(--shadow); animation:subir .32s cubic-bezier(.2,.9,.3,1)}
+@media (min-width:700px){.velo{align-items:center}.hoja{border-radius:18px}}
+@keyframes subir{from{transform:translateY(40px)}to{transform:none}}
+.hoja .tipo{font-family:var(--f-ui); font-weight:800; font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.hoja h3{font-family:var(--f-display); font-weight:400; font-size:1.65rem; line-height:1.15; margin:.25em 0 .5em; text-wrap:balance}
+.hoja p{font-size:1.02rem}
+.acciones{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+.btn{font-family:var(--f-ui); font-weight:700; font-size:.98rem; border:2px solid var(--ink); background:transparent; color:var(--ink); padding:10px 16px; border-radius:999px; cursor:pointer}
+.btn.lleno{background:var(--ink); color:var(--desk)}
+.btn:disabled{opacity:.45; cursor:default}
+.opciones{display:grid; gap:10px; margin:12px 0}
+.opcion{text-align:left; font-family:var(--f-ui); font-weight:500; font-size:1rem; line-height:1.35; padding:12px 14px; border-radius:12px; border:2px solid var(--rule); background:var(--desk); color:var(--ink); cursor:pointer}
+.opcion.bien{border-color:var(--ok); background:color-mix(in srgb,var(--ok) 16%,var(--desk))}
+.opcion.mal{border-color:var(--bad); background:color-mix(in srgb,var(--bad) 14%,var(--desk))}
+.opcion:disabled{cursor:default}
+.explica{font-family:var(--f-ui); font-size:.98rem; line-height:1.5; padding:12px 14px; border-left:4px solid var(--ok); background:var(--desk)}
+
+/* ---------- verbómetro ---------- */
+.verbometro{margin:10px 0 34px; background:var(--scrap); padding:20px clamp(14px,4vw,24px) 18px; box-shadow:0 10px 24px var(--shadow); position:relative; transform:rotate(.4deg); transition:background .45s}
+.verbometro[data-modo="cert"]{background:color-mix(in srgb,var(--cert) 14%,var(--scrap))}
+.verbometro[data-modo="duda"]{background:color-mix(in srgb,var(--duda) 55%,var(--scrap))}
+.verbometro[data-modo="deseo"]{background:color-mix(in srgb,var(--deseo) 22%,var(--scrap))}
+.vm-cabeza{display:flex; justify-content:space-between; align-items:baseline; gap:10px; border-bottom:3px double var(--ink); padding-bottom:6px; margin-bottom:12px}
+.vm-cabeza b{font-family:var(--f-display); font-weight:400; font-size:1.35rem}
+.vm-cabeza span{font-family:var(--f-type); font-size:.8rem; color:var(--muted)}
+.vm-titular{font-family:var(--f-display); font-size:clamp(1.5rem,6.2vw,2.1rem); line-height:1.18; min-height:3.6em; margin:0 0 8px; text-wrap:balance; position:relative; z-index:0}
+.vm-titular mark{background:none; color:inherit; position:relative; white-space:nowrap; display:inline-block}
+.vm-titular mark::before{content:""; position:absolute; inset:.05em -.12em -.02em; z-index:-1; transform:rotate(-1.2deg); box-shadow:0 2px 3px var(--shadow)}
+.verbometro[data-modo="cert"] mark::before{background:var(--cert)} .verbometro[data-modo="cert"] mark{color:var(--on-cert)}
+.verbometro[data-modo="duda"] mark::before{background:var(--duda); background-image:repeating-linear-gradient(0deg,transparent 0 5px,color-mix(in srgb,var(--on-duda) 14%,transparent) 5px 6px)} .verbometro[data-modo="duda"] mark{color:var(--on-duda)}
+.verbometro[data-modo="deseo"] mark::before{background:var(--deseo)} .verbometro[data-modo="deseo"] mark{color:var(--on-deseo)}
+.dial{display:block; width:min(300px,100%); margin:4px auto 0}
+.aguja{transition:transform .6s cubic-bezier(.3,1.5,.5,1); transform-origin:150px 150px}
+.vm-nota{font-family:var(--f-ui); font-size:1rem; line-height:1.5; margin:6px 0 14px; min-height:4.5em}
+.vm-nota b{font-weight:800}
+.pestanas{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.pestana{font-family:var(--f-ui); font-weight:800; font-size:.95rem; padding:12px 6px; border:0; cursor:pointer; box-shadow:0 3px 0 rgba(0,0,0,.18); transform:rotate(var(--r,0deg)); transition:transform .2s}
+.pestana[data-m="cert"]{background:var(--cert); color:var(--on-cert); --r:-1.5deg}
+.pestana[data-m="duda"]{background:var(--duda); color:var(--on-duda); --r:1deg}
+.pestana[data-m="deseo"]{background:var(--deseo); color:var(--on-deseo); --r:-.5deg}
+.pestana[aria-pressed="true"]{transform:translateY(-4px) rotate(0deg) scale(1.04); outline:3px solid var(--ink); outline-offset:2px}
+.vm-otra{display:block; margin:14px auto 0; font-family:var(--f-hand); font-size:1.35rem; background:none; border:0; cursor:pointer; color:var(--ink); text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px}
+
+/* ---------- bandas ---------- */
+.banda{position:relative; margin-top:26px}
+.banda .marco{position:relative; overflow:hidden}
+.banda .marco img.fondo{width:100%; aspect-ratio:4/3; object-fit:cover; max-height:80vh; transform:translateY(var(--par,0px)) scale(1.12); will-change:transform}
+@media (min-width:820px){.banda .marco img.fondo{aspect-ratio:21/9}}
+.banda .rotulo{position:absolute; left:clamp(16px,5vw,28px); bottom:-26px; z-index:4; display:flex; flex-direction:column; align-items:flex-start; gap:4px}
+.banda .rotulo b{font-family:var(--f-block); font-weight:400; font-size:clamp(2.2rem,10vw,3.4rem); line-height:1; padding:.1em .3em .14em; box-shadow:0 4px 8px var(--shadow); transform:rotate(-2deg)}
+.banda .rotulo span{font-family:var(--f-type); font-size:1rem; background:var(--scrap); padding:4px 10px; transform:rotate(1deg); box-shadow:0 2px 4px var(--shadow)}
+.banda.cert .rotulo b{background:var(--cert); color:var(--on-cert)}
+.banda.duda .rotulo b{background:var(--duda); color:var(--on-duda)}
+.banda.deseo .rotulo b{background:var(--deseo); color:var(--on-deseo)}
+.banda.trampa .rotulo b{background:var(--brick); color:var(--on-brick)}
+.banda.lupa .rotulo b{background:var(--kraft); color:var(--on-kraft)}
+.tras-banda{padding-top:54px}
+.sello-tinta{position:absolute; right:5%; bottom:20%; z-index:3; font-family:var(--f-block); font-size:clamp(1.6rem,8vw,3rem); letter-spacing:.06em; color:#B3261E; border:.14em solid #B3261E; padding:.06em .3em; transform:rotate(-14deg); filter:url(#tinta); opacity:.9; mix-blend-mode:multiply}
+.banda.en-vista .sello-tinta{animation:golpe .5s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes golpe{0%{transform:rotate(-14deg) scale(2.2); opacity:0}60%{transform:rotate(-14deg) scale(.94); opacity:.95}100%{transform:rotate(-14deg) scale(1); opacity:.9}}
+.lluvia,.estrellas{position:absolute; inset:0; pointer-events:none; z-index:2; overflow:hidden}
+.lluvia img{position:absolute; top:-12%; width:var(--s,28px); animation:caer-gota var(--t,3.2s) linear var(--d,0s) infinite; filter:drop-shadow(0 3px 3px rgba(0,0,0,.3))}
+@keyframes caer-gota{from{transform:translateY(0) rotate(4deg)}to{transform:translateY(135vw) rotate(-4deg)}}
+@media (min-width:820px){@keyframes caer-gota{from{transform:translateY(0)}to{transform:translateY(55vw)}}}
+.estrellas img{position:absolute; bottom:-14%; width:var(--s,30px); animation:subir-estrella var(--t,7s) ease-in var(--d,0s) infinite; filter:drop-shadow(0 3px 3px rgba(0,0,0,.3))}
+@keyframes subir-estrella{0%{transform:translate(0,0) rotate(0); opacity:0}10%{opacity:1}100%{transform:translate(var(--dx,20px),-90vw) rotate(200deg); opacity:.85}}
+.banda.trampa.en-vista .marco{animation:sacudir .45s ease-in-out 2}
+@keyframes sacudir{0%,100%{transform:none}25%{transform:translateX(-6px) rotate(-.6deg)}75%{transform:translateX(6px) rotate(.6deg)}}
+
+/* ---------- historia de El Tiempo (scroll con cámara) ---------- */
+.historia{position:relative; max-width:1100px; margin-inline:auto; padding-inline:clamp(16px,5vw,28px)}
+.camara-sticky{position:sticky; top:calc(env(safe-area-inset-top,0px) + 14px); z-index:1}
+.camara{position:relative; overflow:hidden; background:var(--frame); padding:6px; box-shadow:0 10px 24px var(--shadow); aspect-ratio:696/653; max-width:560px; margin-inline:auto}
+.lienzo{position:absolute; inset:6px; transform-origin:0 0; transition:transform .9s cubic-bezier(.4,0,.2,1)}
+.lienzo img{width:100%; height:100%}
+.zona{position:absolute; border:3px solid #A6422E; background:rgba(228,185,71,.28); opacity:0; transition:opacity .4s .5s; border-radius:3px}
+.historia[data-paso="1"] .zona[data-z="1"],.historia[data-paso="2"] .zona[data-z="2"],.historia[data-paso="3"] .zona[data-z="3"]{opacity:1}
+.chip-paso{position:absolute; left:12px; top:12px; z-index:2; font-family:var(--f-ui); font-weight:800; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; padding:5px 10px; box-shadow:0 2px 4px rgba(0,0,0,.25); background:#F8F3E8; color:#1F1B17; transition:background .3s}
+.historia[data-paso="1"] .chip-paso{background:#3E5F8C; color:#FFFFFF}
+.historia[data-paso="2"] .chip-paso,.historia[data-paso="3"] .chip-paso{background:#D6CFC1; color:#2D2924}
+.pasos{position:relative; z-index:2; padding-top:38vh; padding-bottom:16vh}
+.paso{max-width:30rem; margin:0 auto 62vh; background:var(--scrap); padding:16px 18px; box-shadow:0 10px 24px var(--shadow); font-family:var(--f-ui); font-size:1.02rem; line-height:1.55; border-left:6px solid var(--brick)}
+.paso:last-child{margin-bottom:0}
+.paso .cita{font-family:var(--f-type); display:block; margin-bottom:6px; color:var(--muted)}
+.paso b{font-weight:800}
+.pie{font-family:var(--f-ui); font-size:.82rem; color:var(--muted); margin:8px auto 0; max-width:560px}
+@media (min-width:900px){
+  .historia{display:grid; grid-template-columns:1.15fr 1fr; gap:40px; align-items:start}
+  .camara-sticky{top:12vh}
+  .pasos{padding-top:20vh}
+  .paso{margin-bottom:55vh}
+}
+
+/* ---------- Bello ---------- */
+.bello{perspective:1200px; width:min(250px,70%); float:right; margin:4px 0 14px 18px; cursor:pointer; border:0; padding:0; background:none; text-align:left}
+.bello .giro{position:relative; display:grid; transition:transform .7s cubic-bezier(.3,1.2,.4,1); transform-style:preserve-3d}
+.bello[aria-pressed="true"] .giro{transform:rotateY(180deg)}
+.bello .cara{grid-area:1/1; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--scrap); padding:8px; box-shadow:0 8px 18px var(--shadow)}
+.bello .cara img{aspect-ratio:4/5; object-fit:cover; object-position:50% 25%; width:100%}
+.bello .cara small{display:block; font-family:var(--f-hand); font-size:1.25rem; text-align:center; padding-top:4px}
+.bello .dorso{transform:rotateY(180deg); font-family:var(--f-ui); font-size:.88rem; line-height:1.45; padding:14px; overflow:auto}
+.bello .dorso b{font-family:var(--f-display); font-weight:400; font-size:1.3rem; display:block; margin-bottom:4px}
+@media (max-width:520px){.bello{float:none; margin:6px auto 22px; display:block; width:min(270px,80%)}}
+
+/* ---------- cita recortada ---------- */
+.cita-recorte{margin:30px 0 34px; text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:6px; font-size:clamp(1.25rem,5vw,1.7rem); line-height:1}
+.cita-recorte span{display:inline-block; padding:.18em .3em; box-shadow:0 2px 4px var(--shadow)}
+.cita-recorte .c1{font-family:var(--f-display); background:var(--scrap); transform:rotate(-2deg)}
+.cita-recorte .c2{font-family:var(--f-block); background:var(--cert); color:var(--on-cert); transform:rotate(1.5deg)}
+.cita-recorte .c3{font-family:var(--f-type); background:var(--duda); color:var(--on-duda); transform:rotate(-1deg)}
+.cita-recorte .c4{font-family:var(--f-display); background:var(--deseo); color:var(--on-deseo); transform:rotate(2deg)}
+.cita-recorte .c5{font-family:var(--f-block); background:var(--brick); color:var(--on-brick); transform:rotate(-1.5deg)}
+
+/* ---------- casos trampa ---------- */
+.trampas{display:grid; gap:18px; margin:6px 0 30px}
+.trampa{perspective:1200px}
+.trampa .giro{display:grid; transition:transform .7s cubic-bezier(.3,1.2,.4,1); transform-style:preserve-3d}
+.trampa.volteada .giro{transform:rotateY(180deg)}
+.trampa .cara{grid-area:1/1; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--scrap); padding:18px 16px 16px; box-shadow:0 6px 14px var(--shadow); min-height:200px; display:flex; flex-direction:column; gap:12px}
+.trampa:nth-child(odd) .cara{transform:rotate(-.7deg)} .trampa:nth-child(even) .cara{transform:rotate(.6deg)}
+.trampa .dorso{transform:rotateY(180deg)}
+.trampa:nth-child(odd) .dorso{transform:rotateY(180deg) rotate(.7deg)}
+.trampa:nth-child(even) .dorso{transform:rotateY(180deg) rotate(-.6deg)}
+.trampa:not(.volteada) .dorso{pointer-events:none} .trampa.volteada .cara:not(.dorso){pointer-events:none}
+.trampa .frase{font-family:var(--f-display); font-size:1.6rem; line-height:1.2; margin:0}
+.trampa .elige{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:auto}
+.trampa .elige button{font-family:var(--f-ui); font-weight:800; font-size:.9rem; padding:10px 4px; border:0; cursor:pointer; box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.trampa .elige [data-m="cert"]{background:var(--cert); color:var(--on-cert)}
+.trampa .elige [data-m="duda"]{background:var(--duda); color:var(--on-duda)}
+.trampa .elige [data-m="deseo"]{background:var(--deseo); color:var(--on-deseo)}
+.sello{align-self:flex-start; font-family:var(--f-block); font-size:1.15rem; letter-spacing:.04em; padding:4px 10px; border:3px solid currentColor; transform:rotate(-6deg); text-transform:uppercase}
+.sello.bien{color:var(--ok)} .sello.mal{color:var(--bad)}
+.trampa .dorso p{font-family:var(--f-ui); font-size:.98rem; line-height:1.5; margin:0}
+.trampa .dorso .era{font-family:var(--f-type); font-size:.9rem; color:var(--muted)}
+@media (min-width:720px){.trampas{grid-template-columns:1fr 1fr}}
+
+/* ---------- lectura guiada ---------- */
+.columna-op{background:var(--scrap); padding:20px clamp(14px,4vw,24px); box-shadow:0 8px 20px var(--shadow); margin:8px 0 12px; position:relative}
+.columna-op .firma{font-family:var(--f-type); font-size:.85rem; color:var(--muted); margin-bottom:8px; display:block}
+.columna-op p{font-size:1.08rem; line-height:1.9; margin:0}
+.v{background:none; border:0; padding:0 .08em; font:inherit; color:inherit; cursor:pointer; position:relative; z-index:0; border-radius:2px}
+.v::after{content:""; position:absolute; left:-.1em; right:-.1em; bottom:.12em; height:.62em; z-index:-1; transform:scaleX(0); transform-origin:left; transition:transform .45s cubic-bezier(.6,.1,.3,1); transition-delay:var(--d,0s); border-radius:3px 6px 4px 7px; opacity:.85}
+.v[data-m="cert"]::after{background:color-mix(in srgb,var(--cert) 45%,transparent)} .v[data-m="duda"]::after{background:var(--duda-mark)} .v[data-m="deseo"]::after{background:var(--deseo)}
+.subrayado .v::after{transform:scaleX(1)}
+.v.activo{outline:2px dashed var(--ink); outline-offset:2px}
+.mapa{display:flex; height:16px; margin:12px 0 4px; box-shadow:0 2px 4px var(--shadow); background:var(--rule)}
+.mapa i{display:block; height:100%; transition:flex-grow .8s}
+.mapa .mc{background:var(--cert)} .mapa .md{background:var(--duda-mark)} .mapa .mw{background:var(--deseo)}
+.leyenda{display:flex; flex-wrap:wrap; gap:6px 14px; font-family:var(--f-ui); font-size:.85rem; color:var(--muted)}
+.leyenda span::before{content:""; display:inline-block; width:12px; height:12px; margin-right:6px; vertical-align:-1px}
+.leyenda .lc::before{background:var(--cert)} .leyenda .ld::before{background:var(--duda-mark)} .leyenda .lw::before{background:var(--deseo)}
+.guia-nota{font-family:var(--f-ui); font-size:1rem; line-height:1.5; margin:10px 0 18px; min-height:3em}
+
+/* ---------- detector ---------- */
+.detector{background:var(--scrap); padding:20px clamp(14px,4vw,22px); box-shadow:0 10px 24px var(--shadow); margin:12px 0 30px; position:relative}
+.detector h3{font-family:var(--f-display); font-weight:400; font-size:1.55rem; margin:0 0 4px}
+.detector label{font-family:var(--f-ui); font-size:.95rem; color:var(--muted); display:block; margin-bottom:8px}
+.detector textarea{width:100%; min-height:84px; resize:vertical; font-family:var(--f-type); font-size:1.05rem; line-height:1.5; padding:12px; border:2px solid var(--rule); background:var(--desk); color:var(--ink); border-radius:6px}
+.ejemplos{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 4px}
+.ejemplos button{font-family:var(--f-ui); font-weight:700; font-size:.85rem; padding:7px 12px; border-radius:999px; border:1.5px solid var(--rule); background:transparent; color:var(--ink); cursor:pointer; text-align:left}
+.det-salida{margin-top:14px; display:grid; gap:10px}
+.det-frase{font-family:var(--f-display); font-size:1.4rem; line-height:1.35; margin:0; min-height:1.4em; overflow-wrap:anywhere}
+.det-frase .p{padding:0 .12em; box-shadow:0 2px 3px var(--shadow); border-radius:2px}
+.det-frase .p.cert{background:var(--cert); color:var(--on-cert)} .det-frase .p.duda{background:var(--duda-mark); color:var(--ink)} .det-frase .p.deseo{background:var(--deseo); color:var(--on-deseo)}
+.det-veredicto{font-family:var(--f-ui); font-size:1rem; line-height:1.5; margin:0}
+.det-veredicto b{font-weight:800}
+.det-aviso{font-family:var(--f-ui); font-size:.82rem; color:var(--muted); margin:6px 0 0}
+
+/* ---------- pósit ---------- */
+details.posit{background:var(--deseo); color:var(--on-deseo); padding:14px 16px; margin:26px 0; box-shadow:0 8px 16px var(--shadow); transform:rotate(-1.2deg); max-width:30rem}
+details.posit summary{font-family:var(--f-hand); font-size:1.6rem; line-height:1.1; cursor:pointer; list-style:none}
+details.posit summary::-webkit-details-marker{display:none}
+details.posit summary::after{content:" ＋"; font-family:var(--f-ui); font-size:1.1rem}
+details.posit[open] summary::after{content:" －"}
+details.posit p{font-family:var(--f-ui); font-size:.98rem; line-height:1.5; margin:10px 0 0}
+
+/* ---------- actividad ---------- */
+.actividad{background:var(--scrap); padding:20px clamp(14px,4vw,22px); box-shadow:0 10px 24px var(--shadow); margin:16px 0 30px}
+.act-cabeza{display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap}
+.act-cabeza h3{font-family:var(--f-display); font-weight:400; font-size:1.55rem; margin:0}
+.act-cabeza span{font-family:var(--f-type); font-size:.85rem; color:var(--muted)}
+.act-instr{font-family:var(--f-ui); font-size:.95rem; color:var(--muted); margin:6px 0 14px}
+.ejercicio{font-family:var(--f-ui); font-weight:500; font-size:1.08rem; line-height:2.3; margin:0 0 12px}
+.hueco{display:inline-block; min-width:5.4em; padding:0 .5em; border:0; border-bottom:3px solid var(--ink); background:color-mix(in srgb,var(--ink) 6%,transparent); font-family:var(--f-ui); font-weight:800; cursor:pointer; line-height:1.6; text-align:center; color:var(--ink)}
+.hueco.lleno{background:var(--duda); color:var(--on-duda)}
+.hueco.bien{background:color-mix(in srgb,var(--ok) 25%,var(--scrap)); border-color:var(--ok); color:var(--ink)}
+.hueco.mal{background:color-mix(in srgb,var(--bad) 22%,var(--scrap)); border-color:var(--bad); color:var(--ink)}
+.banco{display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 14px}
+.ficha{font-family:var(--f-ui); font-weight:800; font-size:1rem; padding:10px 16px; border:0; cursor:pointer; background:var(--kraft); color:var(--on-kraft); box-shadow:0 3px 0 rgba(0,0,0,.2); transform:rotate(var(--r,0deg))}
+.ficha:nth-child(2n){--r:1.5deg}.ficha:nth-child(3n){--r:-1.5deg}
+.ficha[aria-pressed="true"]{outline:3px solid var(--ink); outline-offset:2px; transform:translateY(-3px)}
+.ficha:disabled{opacity:.3; cursor:default}
+.act-pie{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
+.act-msg{font-family:var(--f-ui); font-weight:700; font-size:.98rem; margin:0}
+
+.fragmento{font-style:italic; background:var(--scrap); padding:16px 18px; box-shadow:0 4px 10px var(--shadow); margin:8px 0 14px; border-left:6px solid var(--duda-mark)}
+.fragmento p{margin:0}
+
+/* ---------- marcador e insignia ---------- */
+.marcador{position:fixed; right:12px; top:calc(14px + env(safe-area-inset-top,0px)); z-index:30; background:var(--ink); color:var(--desk); font-family:var(--f-ui); font-weight:800; font-size:.88rem; padding:8px 12px; border-radius:999px; box-shadow:0 4px 12px var(--shadow); transition:transform .3s, opacity .3s; pointer-events:none; opacity:0}
+.marcador.visible{opacity:1}
+.marcador.salto{transform:scale(1.18)}
+.final{padding-block:30px 10px; text-align:center}
+.insignia{position:relative; width:min(300px,78vw); margin:0 auto}
+.insignia img{width:100%; filter:drop-shadow(0 10px 14px var(--shadow)); transition:transform .8s cubic-bezier(.3,1.5,.5,1)}
+.final.lleno .insignia img{transform:rotate(-8deg) scale(1.04)}
+.cinta-final{display:inline-block; margin-top:-26px; position:relative; z-index:2; background:var(--brick); color:var(--on-brick); font-family:var(--f-block); font-size:clamp(1.3rem,6vw,1.8rem); padding:.2em .7em; transform:rotate(-2deg); box-shadow:0 4px 8px var(--shadow)}
+.final p{font-family:var(--f-ui); margin:14px auto 0; max-width:30rem; color:var(--muted)}
+.refs{font-family:var(--f-ui); font-size:.88rem; color:var(--muted); padding-block:28px 90px}
+.refs h3{font-family:var(--f-ui); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; margin:0 0 8px}
+.refs p{margin:0 0 6px}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important; transition:none!important}
+  html{scroll-behavior:auto}
+  .lluvia,.estrellas{display:none}
+}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="tinta"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="5"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 1 1 1 0.85 1"/></feComponentTransfer></filter>
+</svg>
+
+<div class="progreso" aria-hidden="true"><i id="barra"></i></div>
+
+<main lang="es">
+  <!-- PORTADA -->
+  <header>
+    <div class="escenario" id="escenario">
+      <div class="capa c-sil" data-f="0.04"><img class="pieza" src="img/p-silueta.webp" alt="" width="820" height="1174"></div>
+      <div class="capa c-ra" data-f="-0.16"><button class="burbuja" data-ir="t-duda" aria-label="Ir a la sección Duda"><span class="pieza"><img src="img/p-rasgada.webp" alt="" width="820" height="313"><span class="etiqueta">duda</span></span></button></div>
+      <div class="capa c-az" data-f="-0.26"><button class="burbuja" data-ir="t-cert" aria-label="Ir a la sección Certeza"><span class="pieza"><img src="img/p-azul.webp" alt="" width="640" height="478"><span class="etiqueta">certeza</span></span></button></div>
+      <div class="capa c-es" data-f="-0.1"><button class="burbuja" data-ir="t-deseo" aria-label="Ir a la sección Deseo"><span class="pieza"><img src="img/p-estrella.webp" alt="" width="480" height="392"><span class="etiqueta">deseo</span></span></button></div>
+      <div class="titulo" data-f="0.12">
+        <span class="kicker">Lectura crítica</span>
+        <h1 class="rescate" aria-label="Lo que el verbo delata"><span class="rec" aria-hidden="true">Lo</span><span class="rec" aria-hidden="true">que</span><span class="rec" aria-hidden="true">el</span><span class="rec" aria-hidden="true">verbo</span><span class="rec" aria-hidden="true">delata</span></h1>
+        <div class="subtitulo"><span class="cinta" aria-hidden="true"></span>Certeza, duda y deseo en lo que lees</div>
+      </div>
+      <span class="toca" aria-hidden="true">toca una burbuja ↑</span>
+    </div>
+    <div class="col bajo-portada">
+      <div class="dificultad" role="img" aria-label="Dificultad: difícil, nivel 3 de 3">
+        <span class="dif-label" aria-hidden="true">Dificultad</span>
+        <span class="dif-barras" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="dif-nivel" aria-hidden="true">Difícil</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO + CONVERSACIÓN -->
+  <section class="col bloque">
+    <p class="capitular">Pregúntale a cualquier colombiano qué es el presente del subjuntivo y lo más probable es que ponga cara de examen sorpresa. Y sin embargo lo usa todos los días, sin pensarlo. Haz la prueba con esta conversación:</p>
+
+    <div class="chat" id="chat">
+      <div class="chat-cab"><span class="av" aria-hidden="true">L</span><div><b>Liam</b><span>está aprendiendo español</span></div></div>
+      <div class="chat-cuerpo" id="chat-cuerpo" aria-live="polite">
+        <div class="msg ellos">Oye, ¿me ayudas a conjugar el presente del subjuntivo?</div>
+        <div class="msg tu">¿El qué?</div>
+        <div class="msg ellos">Ok, más fácil. Termina esta frase: «Ojalá que mañana no…»</div>
+      </div>
+      <div class="opciones-chat" id="chat-op" role="group" aria-label="Elige cómo terminar la frase">
+        <button data-w="llueve">llueve</button><button data-w="llueva">llueva</button><button data-w="lloverá">lloverá</button>
+      </div>
+    </div>
+
+    <figure class="polaroid">
+      <span class="cinta" aria-hidden="true"></span>
+      <img src="img/meme.webp" alt="Meme: un extranjero pregunta cómo se conjuga el presente del subjuntivo y el hablante nativo responde «¿El qué?»." width="640" height="709" loading="lazy">
+      <figcaption>Todos usamos el subjuntivo. Casi nadie sabe que lo usa.</figcaption>
+    </figure>
+
+    <p>Nadie te explicó la regla y la usaste igual. Es como montar en bicicleta: puedes hacerlo perfectamente sin saber explicar la física del equilibrio.</p>
+    <p><button class="bolita" data-kind="fact" data-sheet="ingles" aria-label="Dato curioso: el inglés casi se queda sin subjuntivo"></button>Ese conocimiento escondido sirve para algo más que conjugar: sirve para leer. Los verbos no solo cuentan qué pasó. También dicen <strong>qué tan seguro está quien habla</strong>, si está adivinando, si desea algo o si te está dando una orden disfrazada.</p>
+    <p>Los lingüistas llaman a esto <strong>modalidad</strong>: la actitud de quien habla frente a lo que dice. Es el lenguaje corporal de un texto. El autor nunca escribe «estoy dudando», pero su verbo lo delata.</p>
+
+    <p class="lead-ui" style="margin-top:1.6em">Pruébalo</p>
+    <p>Esta es la misma frase contada tres veces. Solo cambia el verbo. Toca cada papel y mira qué le pasa a quien la escribe.</p>
+    <div class="verbometro" id="vm" data-modo="cert">
+      <div class="vm-cabeza"><b>El verbómetro</b><span id="vm-cont">Frase 1 de 3</span></div>
+      <p class="vm-titular" id="vm-titular" aria-live="polite">El concejal <mark>recibió</mark> dinero de un contratista.</p>
+      <svg class="dial" viewBox="0 0 300 170" role="img" aria-labelledby="vm-dial-t">
+        <title id="vm-dial-t">Dial que muestra qué hace quien escribe: afirma, sospecha o pide</title>
+        <path d="M30 150 A120 120 0 0 1 90 46" fill="none" stroke="var(--cert)" stroke-width="26"/>
+        <path d="M94 44 A120 120 0 0 1 206 44" fill="none" stroke="var(--duda-mark)" stroke-width="26"/>
+        <path d="M210 46 A120 120 0 0 1 270 150" fill="none" stroke="var(--deseo)" stroke-width="26"/>
+        <text x="40" y="110" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="var(--ink)" transform="rotate(-52 40 110)">AFIRMA</text>
+        <text x="150" y="22" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="var(--ink)">SOSPECHA</text>
+        <text x="258" y="104" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="var(--ink)" transform="rotate(52 258 104)" text-anchor="end">PIDE</text>
+        <g class="aguja" id="vm-aguja" style="transform:rotate(-58deg)"><path d="M147 150 L150 52 L153 150 Z" fill="var(--brick)"/></g>
+        <circle cx="150" cy="150" r="12" fill="var(--ink)"/>
+      </svg>
+      <p class="vm-nota" id="vm-nota" aria-live="polite"><b>Afirma.</b> El periódico lo da por hecho y se hace responsable. Si se equivoca, tendrá que rectificar.</p>
+      <div class="pestanas" role="group" aria-label="Modo del verbo">
+        <button class="pestana" data-m="cert" aria-pressed="true">Certeza</button>
+        <button class="pestana" data-m="duda" aria-pressed="false">Duda</button>
+        <button class="pestana" data-m="deseo" aria-pressed="false">Deseo</button>
+      </div>
+      <button class="vm-otra" id="vm-otra">Otra frase →</button>
+    </div>
+  </section>
+
+  <!-- CERTEZA -->
+  <section class="banda cert" aria-labelledby="t-cert">
+    <div class="marco"><img class="fondo rasgado" src="img/certeza.webp" alt="Collage: un puño de papel kraft estampa un sello rojo sobre una hoja de periódico, junto a una regla y un clavo." width="1400" height="933" loading="lazy"><span class="sello-tinta" aria-hidden="true">HECHO</span></div>
+    <div class="rotulo"><b id="t-cert">Certeza</b><span>el verbo que no duda</span></div>
+  </section>
+  <section class="col bloque tras-banda">
+    <p>Empecemos por el más confiado de la familia: el <strong>modo indicativo</strong>. Es el que usamos para presentar algo como un hecho: «El examen <strong>es</strong> el domingo», «Colombia <strong>tiene</strong> 32 departamentos», «Se me <strong>acabaron</strong> los datos». Quien habla en indicativo pone su firma debajo de lo que dice. Es el amigo que nunca duda, ni siquiera cuando debería.</p>
+    <p><button class="bolita izq" data-kind="quiz" data-sheet="suplemento" aria-label="Reto: el blog del suplemento"></button>Aquí está la trampa clásica: el indicativo muestra <strong>seguridad</strong>, no <strong>verdad</strong>. «La Tierra <strong>es</strong> plana» está en indicativo y sigue siendo falsa. Cuando un texto usa expresiones como <em>demuestra</em>, <em>confirma</em>, <em>es evidente que</em> o <em>sin duda</em>, el autor te está diciendo «esto lo doy por cierto». Tu trabajo no es creerle de inmediato, sino preguntarte: ¿con qué pruebas sostiene tanta seguridad?</p>
+  </section>
+
+  <!-- DUDA -->
+  <section class="banda duda" aria-labelledby="t-duda">
+    <div class="marco"><img class="fondo rasgado" src="img/duda.webp" alt="Collage: una niña con impermeable amarillo y paraguas de periódico mira una nube de papel que deja caer gotas." width="1400" height="933" loading="lazy">
+      <div class="lluvia" aria-hidden="true">
+        <img src="img/p-gota.webp" alt="" style="left:58%;--s:26px;--t:3.4s;--d:0s"><img src="img/p-gota.webp" alt="" style="left:66%;--s:20px;--t:2.9s;--d:1.1s"><img src="img/p-gota.webp" alt="" style="left:74%;--s:30px;--t:3.8s;--d:.5s"><img src="img/p-gota.webp" alt="" style="left:82%;--s:18px;--t:2.6s;--d:1.7s"><img src="img/p-gota.webp" alt="" style="left:90%;--s:24px;--t:3.3s;--d:2.3s"><img src="img/p-gota.webp" alt="" style="left:49%;--s:16px;--t:2.8s;--d:2.9s">
+      </div>
+    </div>
+    <div class="rotulo"><b id="t-duda">Duda</b><span>el verbo que sale con paraguas</span></div>
+  </section>
+  <section class="col bloque tras-banda">
+    <p>Ahora conozcamos al prudente, el que nunca sale de la casa sin paraguas. Cuando alguien no está seguro, el español le ofrece varias herramientas. El <strong>subjuntivo</strong>, después de expresiones como <em>es posible que</em> o <em>no creo que</em>: «Es posible que <strong>llegue</strong> tarde». El <strong>condicional</strong>: «<strong>Podría</strong> llover», «Eso <strong>sería</strong> un error». Y palabras que funcionan como cinturón de seguridad: <em>quizá</em>, <em>al parecer</em>, <em>presuntamente</em>, <em>se cree que</em>.</p>
+    <p>El mejor laboratorio para verlo es un periódico. Baja despacio: la cámara se va a acercar a la primera página.</p>
+  </section>
+
+  <div class="historia" id="historia" data-paso="0">
+    <div class="camara-sticky">
+      <div class="camara" id="camara">
+        <span class="chip-paso" id="chip-paso">Primera página</span>
+        <div class="lienzo" id="lienzo">
+          <img src="img/el-tiempo.webp" alt="Primera página del periódico El Tiempo del domingo 6 de marzo de 2022, con los resultados de una encuesta presidencial." width="696" height="653" loading="lazy">
+          <div class="zona" data-z="1" style="left:0%;top:46%;width:62%;height:12%"></div>
+          <div class="zona" data-z="2" style="left:0%;top:59.5%;width:21%;height:12%"></div>
+          <div class="zona" data-z="3" style="left:21.5%;top:59.5%;width:23%;height:13%"></div>
+        </div>
+      </div>
+      <p class="pie">El Tiempo, 6 de marzo de 2022. La imagen viene de una captura de baja resolución.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso" data-p="0"><span class="cita">Domingo 6 de marzo de 2022</span>Faltan casi tres meses para la primera vuelta presidencial y el periódico publica una encuesta. Mira qué verbo usa en cada parte de la página.</div>
+      <div class="paso" data-p="1"><span class="cita">«Petro, 32,7 %; Fajardo, 9,1 %…»</span><b>Certeza, pero sobre la encuesta.</b> Las cifras van en indicativo porque son un hecho: eso respondió la gente encuestada. Lo que no es un hecho es la elección, que todavía no había pasado.</div>
+      <div class="paso" data-p="2"><span class="cita">«Habría segunda vuelta para presidenciales»</span><b>Duda.</b> El titular usa el condicional. El periódico no dice que habrá segunda vuelta: dice que, según la encuesta, la habría.</div>
+      <div class="paso" data-p="3"><span class="cita">«Si las elecciones fueran este domingo… ganaría… pero habría segunda vuelta»</span><b>Hipótesis.</b> «Fueran» (subjuntivo) plantea un supuesto que no es real. «Ganaría» y «habría» (condicional) cuentan qué pasaría en ese supuesto.</div>
+      <div class="paso" data-p="4"><span class="cita">¿Y si hubiera escrito «Hay segunda vuelta»?</span>Estaría vendiendo como hecho algo que todavía no existía. Esa vez la encuesta acertó y sí hubo segunda vuelta, pero el 6 de marzo nadie podía saberlo. <b>Un solo verbo separa al periodismo responsable de la profecía.</b></div>
+    </div>
+  </div>
+
+  <section class="col bloque">
+    <button class="bello" id="bello" aria-pressed="false" aria-label="Tarjeta de Andrés Bello. Toca para voltear.">
+      <span class="giro">
+        <span class="cara"><img src="img/bello.webp" alt="Retrato al óleo de Andrés Bello, sentado, con un pergamino en la mano." width="640" height="801" loading="lazy"><small>Andrés Bello · toca para voltear</small></span>
+        <span class="cara dorso"><b>Andrés Bello</b>Nació en Caracas en 1781 y murió en Santiago de Chile en 1865. De joven le dio clases a Simón Bolívar, vivió casi veinte años en Londres y fue el primer rector de la Universidad de Chile. Redactó el Código Civil chileno, en el que se basa el colombiano. En 1847 publicó una gramática pensada para los hispanohablantes de América, y en ella llamó «pospretérito» a formas como «habría» o «ganaría».</span>
+      </span>
+    </button>
+    <p><button class="bolita" data-kind="fact" data-sheet="rumor" aria-label="Dato curioso: el condicional de rumor"></button>El gramático Andrés Bello le dio a ese tiempo, el de «habría» y «ganaría», un nombre que lo explica todo: <strong>pospretérito</strong>. Es un pasado que mira hacia adelante sin tocarlo. Por eso es la herramienta favorita de quien quiere contar algo sin comprometerse.</p>
+    <p>No tiene nada de malo cuando el autor no sabe algo y lo reconoce. El problema empieza cuando la duda se usa para soltar un rumor sin hacerse responsable. Ahí, el lector atento pregunta: ¿quién lo dice?, ¿con qué fuente?</p>
+    <div class="limpiar"></div>
+  </section>
+
+  <!-- DESEO -->
+  <section class="banda deseo" aria-labelledby="t-deseo">
+    <div class="marco"><img class="fondo rasgado" src="img/deseo.webp" alt="Collage nocturno: una niña en una terraza de barrio en ladera eleva una cometa en forma de estrella sobre la ciudad iluminada." width="1400" height="933" loading="lazy">
+      <div class="estrellas" aria-hidden="true">
+        <img src="img/p-estrella.webp" alt="" style="left:62%;--s:26px;--t:7s;--d:0s;--dx:30px"><img src="img/p-estrella.webp" alt="" style="left:76%;--s:18px;--t:8.5s;--d:2.2s;--dx:-20px"><img src="img/p-estrella.webp" alt="" style="left:86%;--s:22px;--t:6.4s;--d:4s;--dx:16px"><img src="img/p-estrella.webp" alt="" style="left:54%;--s:14px;--t:9s;--d:5.2s;--dx:-34px">
+      </div>
+    </div>
+    <div class="rotulo"><b id="t-deseo">Deseo</b><span>el verbo que empuja</span></div>
+  </section>
+  <section class="col bloque tras-banda">
+    <p>El tercer integrante es el más emocional. Aquí el verbo no describe el mundo como es, sino como alguien quiere que sea: «Ojalá <strong>gane</strong> Colombia», «Que te <strong>vaya</strong> bien», «Quiero que me <strong>escuches</strong>». Cuando el deseo se vuelve exigencia, aparece el <strong>imperativo</strong>: «<strong>Compra</strong> ya», «<strong>Descarga</strong> la app». Toda mamá colombiana domina este modo a la perfección: «Que sea la última vez que deja los platos sucios». Ahí no hay pregunta. Hay una advertencia.</p>
+    <p>La publicidad y los discursos políticos viven de este modo, porque necesitan que hagas algo. Cuando un texto está lleno de <em>ojalá</em>, <em>es necesario que</em>, <em>debemos</em> o imperativos, el autor no te está informando: te está <strong>persuadiendo</strong>. No tiene nada de malo, pero hay que reconocerlo para leer con los ojos abiertos.</p>
+    <p class="cita-recorte" aria-label="El verbo no te dice si algo es verdad. Te dice qué tan seguro está quien lo dice.">
+      <span class="c1" aria-hidden="true">El verbo</span><span class="c2" aria-hidden="true">no te dice</span><span class="c3" aria-hidden="true">si algo es verdad.</span><span class="c4" aria-hidden="true">Te dice qué tan seguro</span><span class="c5" aria-hidden="true">está quien lo dice.</span>
+    </p>
+  </section>
+
+  <!-- TRAMPAS -->
+  <section class="banda trampa" aria-labelledby="t-trampa">
+    <div class="marco"><img class="fondo rasgado" src="img/trampa.webp" alt="Collage: una trampa para ratones hecha de cartón y periódico; en lugar de queso, la carnada es una burbuja de diálogo amarilla. Un ratón de papel se asoma." width="1400" height="933" loading="lazy"></div>
+    <div class="rotulo"><b id="t-trampa">Trampas</b><span>cuatro frases que engañan</span></div>
+  </section>
+  <section class="col bloque tras-banda">
+    <p>No siempre es tan obvio. Hay frases que parecen una cosa y son otra. Elige qué actitud delata cada una; la tarjeta se voltea y te dice si caíste.</p>
+    <div class="trampas" id="trampas"></div>
+  </section>
+
+  <!-- DETECTIVE -->
+  <section class="banda lupa" aria-labelledby="t-lupa">
+    <div class="marco"><img class="fondo rasgado" src="img/lupa.webp" alt="Collage: una mano de papel kraft sostiene una lupa roja sobre columnas de periódico; dentro del lente se ven más grandes tres tiras de papel azul, gris y amarillo." width="1400" height="933" loading="lazy"></div>
+    <div class="rotulo"><b id="t-lupa">Detective</b><span>todo junto en un texto de opinión</span></div>
+  </section>
+  <section class="col bloque tras-banda">
+    <p>Este es un párrafo de una columna de opinión inventada. Toca «Subrayar los verbos» y mira cómo cambia la postura del autor de una oración a otra.</p>
+    <div class="columna-op" id="columna">
+      <span class="firma">COLUMNA · «Soltemos el miedo a las pantallas»</span>
+      <p>El celular <button class="v" data-m="cert" data-n="«Es»: el autor presenta su tesis como un hecho.">es</button> la herramienta de estudio más poderosa que <button class="v" data-m="cert" data-n="«Tenemos»: sigue en terreno firme, sin matices.">tenemos</button>. Algunos profesores <button class="v" data-m="duda" data-n="«Creen»: la opinión contraria se presenta como creencia de otros, no como hecho.">creen</button> que <button class="v" data-m="duda" data-n="«Distrae» está en indicativo, pero va dentro de «creen que»: es lo que otros piensan.">distrae</button>, y <button class="v" data-m="duda" data-n="«Es posible que»: el autor concede algo, pero sin comprometerse.">es posible</button> que en ciertos casos <button class="v" data-m="duda" data-n="«Tengan»: subjuntivo. La razón de los otros queda en duda.">tengan</button> razón. Pero <button class="v" data-m="duda" data-n="«Sería»: condicional. Suaviza la crítica para no sonar agresivo.">sería</button> un error prohibirlo sin más. <button class="v" data-m="deseo" data-n="«Necesitamos que»: aquí empieza a pedir.">Necesitamos</button> que los colegios <button class="v" data-m="deseo" data-n="«Enseñen»: subjuntivo de petición. Le dice a otros qué hacer.">enseñen</button> a usarlo bien. <button class="v" data-m="deseo" data-n="«Ojalá»: deseo puro. El autor cierra intentando convencerte.">Ojalá</button> este año <button class="v" data-m="deseo" data-n="«Dejemos»: subjuntivo de deseo, en primera persona del plural para incluirte.">dejemos</button> de pelear con las pantallas y <button class="v" data-m="deseo" data-n="«Empecemos»: otra invitación disfrazada de deseo.">empecemos</button> a aprovecharlas.</p>
+      <div class="mapa" aria-hidden="true"><i class="mc" id="m-c" style="flex-grow:0"></i><i class="md" id="m-d" style="flex-grow:0"></i><i class="mw" id="m-w" style="flex-grow:0"></i></div>
+      <div class="leyenda"><span class="lc">Certeza</span><span class="ld">Duda</span><span class="lw">Deseo</span></div>
+    </div>
+    <div class="acciones"><button class="btn lleno" id="subrayar">Subrayar los verbos</button></div>
+    <p class="guia-nota" id="guia-nota" aria-live="polite"></p>
+    <p><button class="bolita" data-kind="advice" data-sheet="consejo" aria-label="Consejo para leer noticias y redes"></button>Fíjate en el recorrido: el autor afirma su tesis con certeza, presenta a quienes piensan distinto con verbos de duda y cierra pidiendo. No es un texto neutral: quiere convencerte. Eso no lo dice en ninguna parte. Lo dicen sus verbos.</p>
+
+    <p class="lead-ui" style="margin-top:1.8em">Ahora tú</p>
+    <div class="detector" id="detector">
+      <h3>Detector de actitud</h3>
+      <label for="det-in">Escribe o pega una frase: un titular, un anuncio, un trino. O toca un ejemplo.</label>
+      <textarea id="det-in" spellcheck="false">Al parecer, el profe estaría enfermo y mañana no habría clase.</textarea>
+      <div class="ejemplos" id="det-ej">
+        <button>Compra ya y ahorra el 50 %.</button>
+        <button>El agua hierve a 100 grados al nivel del mar.</button>
+        <button>Ojalá que el partido no se cancele.</button>
+        <button>Los científicos creen que podría llover más este año.</button>
+        <button>Sin duda, este es el mejor colegio de Bogotá.</button>
+      </div>
+      <div class="det-salida">
+        <p class="det-frase" id="det-frase" aria-live="polite"></p>
+        <svg class="dial" viewBox="0 0 300 170" role="img" aria-labelledby="det-dial-t" style="width:min(240px,80%)">
+          <title id="det-dial-t">Dial del detector: afirma, sospecha o pide</title>
+          <path d="M30 150 A120 120 0 0 1 90 46" fill="none" stroke="var(--cert)" stroke-width="26"/>
+          <path d="M94 44 A120 120 0 0 1 206 44" fill="none" stroke="var(--duda-mark)" stroke-width="26"/>
+          <path d="M210 46 A120 120 0 0 1 270 150" fill="none" stroke="var(--deseo)" stroke-width="26"/>
+          <text x="40" y="110" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="var(--ink)" transform="rotate(-52 40 110)">AFIRMA</text>
+          <text x="150" y="22" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="var(--ink)">SOSPECHA</text>
+          <text x="258" y="104" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="var(--ink)" transform="rotate(52 258 104)" text-anchor="end">PIDE</text>
+          <g class="aguja" id="det-aguja"><path d="M147 150 L150 52 L153 150 Z" fill="var(--brick)"/></g>
+          <circle cx="150" cy="150" r="12" fill="var(--ink)"/>
+        </svg>
+        <p class="det-veredicto" id="det-ver" aria-live="polite"></p>
+        <p class="det-aviso">El detector busca pistas como «ojalá», «al parecer» o los verbos terminados en «-ría». No entiende ironía ni contexto: tu cabeza sigue siendo el mejor detector.</p>
+      </div>
+    </div>
+
+    <details class="posit">
+      <summary>Truco para el examen Saber</summary>
+      <p>Cuando una pregunta te pida la «actitud» o la «intención» del autor, vuelve a los verbos. Si el autor escribió «podría», descarta las opciones que dicen que «afirma» o «demuestra». Si aparecen «ojalá», «debemos» o imperativos, busca la opción que hable de proponer o persuadir.</p>
+    </details>
+  </section>
+
+  <!-- ACTIVIDAD -->
+  <section class="col bloque">
+    <div class="actividad" id="actividad">
+      <div class="act-cabeza"><h3>Elige el verbo que delata</h3><span id="act-cont">1 de 3</span></div>
+      <p class="act-instr">Toca una ficha y luego el espacio donde va. Sobran fichas, y todas suenan parecido.</p>
+      <p class="ejercicio" id="act-frase"></p>
+      <div class="banco" id="act-banco"></div>
+      <div class="act-pie"><p class="act-msg" id="act-msg" aria-live="polite"></p><button class="btn lleno" id="act-btn">Comprobar</button></div>
+    </div>
+  </section>
+
+  <!-- PREGUNTA FINAL -->
+  <section class="col bloque">
+    <p class="lead-ui">Último reto</p>
+    <h2 class="seccion">Pon a prueba tu ojo</h2>
+    <div class="fragmento"><p>«Las redes sociales <strong>podrían</strong> estar afectando la capacidad de concentración de los adolescentes. Algunos estudios <strong>sugieren</strong> una relación, aunque <strong>es posible que</strong> otros factores, como las horas de sueño, también <strong>influyan</strong>. <strong>Sería</strong> necesario investigar más antes de culpar solo a las pantallas.»</p></div>
+    <p style="font-family:var(--f-ui);font-weight:700">¿Cuál es la actitud del autor frente a la relación entre redes sociales y concentración?</p>
+    <div class="opciones" id="final-op"></div>
+    <div id="final-exp"></div>
+    <p style="margin-top:1.4em">La próxima vez que leas una noticia, un anuncio o un trino, busca el verbo y pregúntale qué tan seguro está. Vas a descubrir que los textos dicen mucho más de lo que dicen. Y si alguien te pregunta qué es el presente del subjuntivo, ya tienes respuesta: «Ojalá que no me lo <strong>pregunten</strong>».</p>
+  </section>
+
+  <section class="final" id="final" aria-live="polite">
+    <div class="insignia"><img src="img/p-insignia.webp" alt="Insignia de papel con una estrella amarilla en el centro." width="520" height="517" loading="lazy"></div>
+    <span class="cinta-final" id="final-rango">Aprendiz de detective</span>
+    <p id="final-txt">0 aciertos de 9 retos. Los retos están en el texto: bolitas, casos trampa, la actividad y la pregunta final.</p>
+  </section>
+
+  <section class="col refs">
+    <h3>Referencias</h3>
+    <p>Bello, A. (1847). <em>Gramática de la lengua castellana destinada al uso de los americanos</em>. Santiago de Chile: Imprenta del Progreso.</p>
+    <p>Real Academia Española y Asociación de Academias de la Lengua Española (2009). <em>Nueva gramática de la lengua española</em>. Madrid: Espasa.</p>
+    <p>El Tiempo (6 de marzo de 2022). Primera página, edición dominical.</p>
+    <p>Retrato de Andrés Bello atribuido a Raymond Monvoisin, dominio público (Wikimedia Commons).</p>
+  </section>
+</main>
+
+<div class="marcador" id="marcador" aria-live="polite">Retos: 0/9</div>
+<div class="velo" id="velo" hidden><div class="hoja" role="dialog" aria-modal="true" aria-labelledby="hoja-t" id="hoja"></div></div>
+
+<script>
+(function(){
+  "use strict";
+  const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>Array.from(c.querySelectorAll(s));
+  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+  /* ---------- marcador ---------- */
+  const TOTAL=9, hechos=new Set(), aciertos=new Set();
+  const RANGOS=[[0,"Aprendiz de detective"],[4,"Detective en formación"],[7,"Detective de verbos"],[9,"Detective jefe"]];
+  function anotar(id,ok){
+    if(hechos.has(id)) return; hechos.add(id); if(ok) aciertos.add(id);
+    const m=$("#marcador"); m.textContent="Retos: "+hechos.size+"/"+TOTAL+" · aciertos "+aciertos.size;
+    m.classList.remove("salto"); void m.offsetWidth; m.classList.add("salto","visible"); clearTimeout(anotar.t); anotar.t=setTimeout(()=>m.classList.remove("visible"),2800);
+    let r=RANGOS[0][1]; RANGOS.forEach(([n,t])=>{ if(aciertos.size>=n) r=t; });
+    $("#final-rango").textContent=r;
+    $("#final-txt").textContent=aciertos.size+" aciertos de "+TOTAL+" retos. "+(hechos.size<TOTAL?"Te faltan "+(TOTAL-hechos.size)+" retos más arriba.":"Completaste todos los retos.");
+    $("#final").classList.toggle("lleno",hechos.size===TOTAL);
+  }
+
+  /* ---------- scroll: progreso, marcador, paralaje ---------- */
+  const barra=$("#barra"), esc_=$("#escenario"), capas=$$("[data-f]",esc_), fondos=$$(".banda .fondo");
+  let mx=0,my=0, pend=false;
+  function marco(){
+    pend=false; const h=document.documentElement, y=h.scrollTop, vh=h.clientHeight;
+    barra.style.transform="scaleX("+Math.min(1,Math.max(0,y/Math.max(1,h.scrollHeight-vh)))+")";
+    if(reduce) return;
+    if(y<vh*1.4) capas.forEach(c=>{const f=+c.dataset.f; c.style.transform="translate3d("+(mx*f*-60)+"px,"+(y*f+my*f*-40)+"px,0)";});
+    fondos.forEach(im=>{const r=im.parentElement.getBoundingClientRect(); if(r.bottom<0||r.top>vh) return; const p=(r.top+r.height/2-vh/2)/vh; im.style.setProperty("--par",(p*-16).toFixed(1)+"px");});
+  }
+  function pedir(){ if(!pend){pend=true; requestAnimationFrame(marco);} }
+  document.addEventListener("scroll",pedir,{passive:true}); window.addEventListener("resize",pedir);
+  esc_.addEventListener("pointermove",e=>{ if(e.pointerType!=="mouse") return; const r=esc_.getBoundingClientRect(); mx=(e.clientX-r.left)/r.width-.5; my=(e.clientY-r.top)/r.height-.5; pedir(); });
+  marco();
+  $$(".burbuja").forEach(b=>b.addEventListener("click",()=>{ const t=document.getElementById(b.dataset.ir); if(t) t.closest("section").scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"}); }));
+
+  /* ---------- bordes rasgados ---------- */
+  $$(".rasgado").forEach((el,k)=>{
+    let seed=(k+3)*7919; const rnd=()=>{seed=(seed*9301+49297)%233280; return seed/233280;}; const n=28, top=[], bot=[];
+    for(let i=0;i<=n;i++) top.push((i/n*100).toFixed(2)+"% "+(rnd()*2.4).toFixed(2)+"%");
+    for(let i=n;i>=0;i--) bot.push((i/n*100).toFixed(2)+"% "+(100-rnd()*2.4).toFixed(2)+"%");
+    el.parentElement.style.clipPath="polygon("+top.concat(bot).join(",")+")";
+  });
+
+  /* ---------- bandas en vista (sello, sacudida) ---------- */
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("en-vista"); io.unobserve(e.target);} }),{threshold:.45});
+    $$(".banda").forEach(b=>io.observe(b));
+  }
+
+  /* ---------- conversación ---------- */
+  const cuerpo=$("#chat-cuerpo");
+  function msg(clase,html){ const d=document.createElement("div"); d.className="msg "+clase; d.innerHTML=html; cuerpo.appendChild(d); return d; }
+  $$("#chat-op button").forEach(b=>b.addEventListener("click",()=>{
+    const w=b.dataset.w; $("#chat-op").hidden=true;
+    msg("tu","Ojalá que mañana no <strong>"+w+"</strong>.");
+    const t=msg("ellos escribiendo",'<i></i><i></i><i></i>');
+    setTimeout(()=>{ t.remove();
+      if(w==="llueva") msg("ellos","¡Eso! Acabas de conjugar el presente del subjuntivo. Sin pensarlo.");
+      else msg("ellos","Mmm… dilo en voz alta: «Ojalá que mañana no <strong>llueva</strong>». Suena mejor, ¿no? Eso que te sonó bien es el presente del subjuntivo.");
+    }, reduce?0:1100);
+  }));
+
+  /* ---------- íconos y hojas de las bolitas ---------- */
+  const ICON={
+    fact:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>',
+    quiz:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9.2 9a3 3 0 1 1 4.2 2.8c-.9.4-1.4 1.1-1.4 2.1V15"/><circle cx="12" cy="19" r=".6" fill="currentColor"/></svg>',
+    advice:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v9"/><circle cx="12" cy="19" r=".7" fill="currentColor"/></svg>'
+  };
+  $$(".bolita").forEach(b=>b.innerHTML=ICON[b.dataset.kind]);
+  const HOJAS={
+    ingles:{tipo:"¿Sabías que…?",t:"El inglés casi se quedó sin subjuntivo",p:["En inglés quedan pocas huellas de este modo, como el famoso «If I were you» (en lugar de «If I was you»), y muchos hablantes ya ni las usan.","En español, en cambio, el subjuntivo está vivísimo: aparece cada vez que dices «ojalá», «para que», «cuando llegues» o «no creo que». Por eso a quienes aprenden español les cuesta tanto: no es una rareza de los libros, es parte de la conversación de todos los días."],saber:true},
+    rumor:{tipo:"¿Sabías que…?",t:"Existe el «condicional de rumor»",p:["Cuando una noticia dice «el funcionario habría recibido dinero», el condicional permite contar algo sin afirmarlo del todo: es información que todavía no está confirmada.","Varios manuales de estilo periodístico en español recomiendan usarlo con mucho cuidado o evitarlo, porque puede sembrar una sospecha sin que nadie se haga responsable de ella."],saber:true},
+    consejo:{tipo:"Te aconsejo que…",t:"Haz un barrido de verbos",p:["Cuando leas una noticia o una publicación en redes, fíjate primero en los verbos principales y en las palabras que los acompañan: quizá, sin duda, al parecer, ojalá.","No te dejes llevar por el tema, que puede ser muy polémico: concéntrate en cómo lo dice. Si una noticia usa «habría» o «al parecer», todavía no es un hecho confirmado, por más escandaloso que suene."]},
+    suplemento:{tipo:"Reto",t:"El blog del suplemento",quiz:{q:"Un blog afirma: «Este suplemento mejora la memoria en una semana». ¿Qué se puede decir del verbo «mejora»?",o:["Demuestra que el autor tiene pruebas científicas de lo que dice.","Expresa una duda del autor sobre el suplemento.","Presenta la afirmación como un hecho, aunque eso no garantiza que sea cierta.","Expresa un deseo del autor, no una afirmación."],c:2,e:"«Mejora» está en indicativo: el autor se compromete con lo que dice y lo presenta como un hecho. Pero la seguridad del verbo no reemplaza las pruebas; eso hay que buscarlo en el resto del texto."}}
+  };
+  const velo=$("#velo"), hoja=$("#hoja"); let origen=null;
+  function abrir(id,btn){
+    const d=HOJAS[id]; origen=btn; let h='<div class="tipo">'+d.tipo+'</div><h3 id="hoja-t">'+d.t+'</h3>';
+    if(d.p) h+=d.p.map(x=>"<p>"+x+"</p>").join("");
+    if(d.quiz) h+="<p><strong>"+d.quiz.q+"</strong></p><div class='opciones'>"+d.quiz.o.map((x,i)=>"<button class='opcion' data-i='"+i+"'>"+x+"</button>").join("")+"</div><div class='q-exp'></div>";
+    h+='<div class="acciones">'+(d.saber?'<button class="btn" data-cerrar>Ya lo sabía</button><button class="btn lleno" data-cerrar>¡No lo sabía!</button>':'<button class="btn lleno" data-cerrar>Entendido</button>')+'</div>';
+    hoja.innerHTML=h; velo.hidden=false; document.body.style.overflow="hidden";
+    if(d.quiz) $$(".opcion",hoja).forEach(b=>b.addEventListener("click",()=>{
+      const i=+b.dataset.i, ok=i===d.quiz.c;
+      $$(".opcion",hoja).forEach((x,j)=>{x.disabled=true; if(j===d.quiz.c) x.classList.add("bien"); else if(j===i) x.classList.add("mal");});
+      $(".q-exp",hoja).innerHTML='<p class="explica"><strong>'+(ok?"¡Exacto! ":"Casi. ")+'</strong>'+d.quiz.e+'</p>';
+      anotar("q-"+id,ok);
+    }));
+    const f=$("button",hoja); if(f) f.focus();
+  }
+  function cerrar(){ velo.hidden=true; document.body.style.overflow=""; if(origen){origen.classList.add("vista"); origen.focus();} }
+  $$(".bolita").forEach(b=>b.addEventListener("click",()=>abrir(b.dataset.sheet,b)));
+  velo.addEventListener("click",e=>{ if(e.target===velo || e.target.hasAttribute("data-cerrar")) cerrar(); });
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape" && !velo.hidden) cerrar(); });
+
+  /* ---------- verbómetro con letras que se barajan ---------- */
+  const FRASES=[
+    {cert:["El concejal ","recibió"," dinero de un contratista."],duda:["El concejal ","habría recibido"," dinero de un contratista."],deseo:["Que el concejal ","devuelva"," el dinero del contratista."],
+     n:{cert:"<b>Afirma.</b> El periódico lo da por hecho y se hace responsable. Si se equivoca, tendrá que rectificar.",duda:"<b>Sospecha.</b> El condicional cuenta el rumor sin comprometerse. Suena a noticia, pero nadie lo está asegurando.",deseo:"<b>Pide.</b> Ya no informa: exige. Quien escribe toma partido y quiere que algo pase."}},
+    {cert:["Mañana ","llueve"," en Bogotá."],duda:["Es posible que mañana ","llueva"," en Bogotá."],deseo:["Ojalá mañana no ","llueva"," en Bogotá."],
+     n:{cert:"<b>Afirma.</b> Suena a pronóstico seguro. Pocas veces el clima merece tanta confianza.",duda:"<b>Sospecha.</b> «Es posible que» obliga al subjuntivo: la lluvia queda en el aire.",deseo:"<b>Pide.</b> El verbo es el mismo que en la duda («llueva»). Lo que cambia la actitud es «ojalá»."}},
+    {cert:["Esta app ","mejora"," tu memoria."],duda:["Esta app ","podría mejorar"," tu memoria."],deseo:["","Mejora"," tu memoria con esta app."],
+     n:{cert:"<b>Afirma.</b> Una promesa en indicativo. Pregunta: ¿dónde están las pruebas?",duda:"<b>Sospecha.</b> «Podría» protege a quien lo dice: si no funciona, nunca prometió nada.",deseo:"<b>Pide.</b> Imperativo de publicidad: ya no te informa, te da una orden amable."}}
+  ];
+  const ANG={cert:-58,duda:0,deseo:58}; let fi=0, modo="cert", baraja=null;
+  function barajar(el,final){
+    if(baraja) clearInterval(baraja); if(reduce){el.textContent=final; return;}
+    const letras="abcdefghilmnoprstuvyáéíóú"; let k=0; const pasos=9;
+    baraja=setInterval(()=>{ k++; el.textContent=final.split("").map((c,i)=> c===" "||i<final.length*k/pasos ? c : letras[Math.floor(Math.random()*letras.length)]).join(""); if(k>=pasos){clearInterval(baraja); el.textContent=final;} },45);
+  }
+  function pintarVM(){
+    const f=FRASES[fi], s=f[modo]; $("#vm").dataset.modo=modo;
+    const t=$("#vm-titular"); t.innerHTML=esc(s[0])+"<mark></mark>"+esc(s[2]); barajar($("mark",t),s[1]);
+    $("#vm-nota").innerHTML=f.n[modo]; $("#vm-aguja").style.transform="rotate("+ANG[modo]+"deg)";
+    $("#vm-cont").textContent="Frase "+(fi+1)+" de "+FRASES.length;
+    $$(".pestana").forEach(p=>p.setAttribute("aria-pressed",String(p.dataset.m===modo)));
+  }
+  $$(".pestana").forEach(p=>p.addEventListener("click",()=>{modo=p.dataset.m; pintarVM();}));
+  $("#vm-otra").addEventListener("click",()=>{fi=(fi+1)%FRASES.length; modo="cert"; pintarVM();});
+
+  /* ---------- historia de El Tiempo: la cámara se acerca ---------- */
+  const hist=$("#historia"), camara=$("#camara"), lienzo=$("#lienzo");
+  const ZOOM={0:{s:1,cx:.5,cy:.5},1:{s:1.55,cx:.31,cy:.52},2:{s:2.5,cx:.13,cy:.655},3:{s:2.3,cx:.33,cy:.66},4:{s:1,cx:.5,cy:.5}};
+  const CHIP={0:"Primera página",1:"Certeza",2:"Duda",3:"Hipótesis",4:"Primera página"};
+  function enfocar(p){
+    hist.dataset.paso=p; $("#chip-paso").textContent=CHIP[p];
+    const z=ZOOM[p], W=lienzo.clientWidth, H=lienzo.clientHeight;
+    let tx=W/2-z.s*z.cx*W, ty=H/2-z.s*z.cy*H; tx=Math.min(0,Math.max(W-z.s*W,tx)); ty=Math.min(0,Math.max(H-z.s*H,ty));
+    lienzo.style.transform="translate("+tx+"px,"+ty+"px) scale("+z.s+")";
+  }
+  if("IntersectionObserver" in window){
+    const io2=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) enfocar(+e.target.dataset.p); }),{rootMargin:"-58% 0px -22% 0px"});
+    $$(".paso").forEach(p=>io2.observe(p));
+  }
+  window.addEventListener("resize",()=>enfocar(+hist.dataset.paso||0));
+
+  /* ---------- Bello ---------- */
+  $("#bello").addEventListener("click",function(){this.setAttribute("aria-pressed",String(this.getAttribute("aria-pressed")!=="true"));});
+
+  /* ---------- casos trampa ---------- */
+  const NOM={cert:"Certeza",duda:"Duda",deseo:"Deseo"};
+  const TRAMPAS=[
+    {f:"«Serán las tres.»",c:"duda",e:"Parece futuro, pero no habla del futuro. Es el futuro de probabilidad: significa «probablemente son las tres». Quien lo dice no tiene reloj a la mano."},
+    {f:"«Creo que el bus ya pasó.»",c:"duda",e:"«Pasó» está en indicativo, pero «creo que» rebaja la seguridad. Es una opinión, no una certeza. Compárala con «El bus ya pasó»."},
+    {f:"«Que te vaya bien.»",c:"deseo",e:"No hay ningún «quiero» ni «ojalá» a la vista, pero están escondidos: es «(Deseo) que te vaya bien». El «que» inicial delata el deseo."},
+    {f:"«Dicen que mañana no hay clase.»",c:"duda",e:"«No hay» está en indicativo, pero «dicen que» manda la responsabilidad a nadie en particular. Es un rumor. Antes de celebrar, busca la fuente."}
+  ];
+  TRAMPAS.forEach((t,i)=>{
+    const d=document.createElement("div"); d.className="trampa";
+    d.innerHTML='<div class="giro"><div class="cara"><p class="frase">'+t.f+'</p><div class="elige" role="group" aria-label="¿Qué actitud delata?">'+['cert','duda','deseo'].map(m=>'<button data-m="'+m+'">'+NOM[m]+'</button>').join("")+'</div></div><div class="cara dorso" aria-live="polite"></div></div>';
+    $$(".elige button",d).forEach(b=>b.addEventListener("click",()=>{
+      const ok=b.dataset.m===t.c;
+      $(".dorso",d).innerHTML='<span class="sello '+(ok?"bien":"mal")+'">'+(ok?"¡Bien!":"¡Trampa!")+'</span><p class="era">Era: '+NOM[t.c]+'</p><p>'+t.e+'</p>';
+      d.classList.add("volteada"); $$(".elige button",d).forEach(x=>x.disabled=true); anotar("t-"+i,ok);
+    }));
+    $("#trampas").appendChild(d);
+  });
+
+  /* ---------- lectura guiada ---------- */
+  const col=$("#columna"), vs=$$(".v",col);
+  vs.forEach((v,i)=>v.style.setProperty("--d",(i*0.12)+"s"));
+  $("#subrayar").addEventListener("click",function(){
+    const on=!col.classList.contains("subrayado"); col.classList.toggle("subrayado",on);
+    this.textContent=on?"Quitar el subrayado":"Subrayar los verbos";
+    const c={cert:0,duda:0,deseo:0}; vs.forEach(v=>c[v.dataset.m]++);
+    $("#m-c").style.flexGrow=on?c.cert:0; $("#m-d").style.flexGrow=on?c.duda:0; $("#m-w").style.flexGrow=on?c.deseo:0;
+    $("#guia-nota").textContent=on?"Empieza azul, se vuelve gris y termina amarillo. Toca cualquier verbo subrayado para ver qué delata.":"";
+  });
+  vs.forEach(v=>v.addEventListener("click",()=>{ if(!col.classList.contains("subrayado")) $("#subrayar").click(); vs.forEach(x=>x.classList.toggle("activo",x===v)); $("#guia-nota").textContent=v.dataset.n; }));
+
+  /* ---------- detector de actitud ---------- */
+  const PISTAS=[
+    ["duda",["no es seguro que","no creo que","es posible que","es probable que","puede que","al parecer","a lo mejor","tal vez","se cree que","se dice que","dicen que","me parece que","parece que","creo que","quizás","quizá","aparentemente","presuntamente","supuestamente","posiblemente","probablemente","según"]],
+    ["deseo",["ojalá","quiero que","queremos que","espero que","esperamos que","necesitamos que","es necesario que","es importante que","hay que","tenemos que","tienes que","debemos","deberíamos","debes","no te pierdas","aprovecha","compra","descarga","vota","únete","suscríbete","inscríbete","regístrate","llama","visita","prueba","pide","comparte","haz","ven","mira","elige"]],
+    ["cert",["sin duda","es evidente que","es evidente","es claro que","está demostrado","es un hecho","demuestra","demostró","confirma","confirmó","comprobado","claramente","definitivamente","siempre","nunca"]]
+  ];
+  const NO_COND=new Set(["categoría","alegría","galería","librería","panadería","batería","lotería","minería","ingeniería","mayoría","minoría","porquería","tontería","brujería","cafetería","papelería","secretaría","tesorería","policía","garantía","energía","maría","ferretería","carnicería","heladería","peluquería","pizzería","joyería","lavandería","frutería","cervecería","infantería","caballería","artillería","hungría"]);
+  const norm=s=>s.toLowerCase();
+  function detectar(texto){
+    const low=norm(texto), marcas=[], usado=new Array(low.length).fill(false);
+    const esLetra=c=>/[a-záéíóúüñ]/i.test(c||"");
+    PISTAS.forEach(([tipo,lista])=>lista.forEach(p=>{
+      let i=0; while((i=low.indexOf(p,i))>-1){
+        const fin=i+p.length;
+        const imperativo=tipo==="deseo" && !p.includes(" ") && !["ojalá","debemos","deberíamos","debes"].includes(p);
+        const antesTxt=low.slice(0,i).trim(), alInicio=!antesTxt || /[.!?¡¿,:;«"]$/.test(antesTxt);
+        if(!esLetra(low[i-1]) && !esLetra(low[fin]) && !usado.slice(i,fin).some(Boolean) && (!imperativo || alInicio)){ marcas.push({i,fin,tipo,txt:texto.slice(i,fin)}); for(let k=i;k<fin;k++) usado[k]=true; }
+        i=fin;
+      }
+    }));
+    const re=/[a-záéíóúüñ]+/gi; let m;
+    while((m=re.exec(low))){
+      const w=m[0], i=m.index, fin=i+w.length;
+      if(usado.slice(i,fin).some(Boolean)) continue;
+      if(/(ría|rías|ríamos|rían)$/.test(w) && w.length>4 && !NO_COND.has(w)){
+        const antes=low.slice(Math.max(0,i-6),i);
+        if(/(^|\s)(la|una|las|esta|esa)\s$/.test(antes)) continue;
+        const prev=texto.slice(0,i).trim(); if(/[A-ZÁÉÍÓÚÑ]/.test(texto[i]) && prev && !/[.!?¡¿«"]$/.test(prev)) continue;
+        marcas.push({i,fin,tipo:"duda",txt:texto.slice(i,fin),cond:true}); for(let k=i;k<fin;k++) usado[k]=true;
+      }
+    }
+    const inicio=low.trim();
+    if(/^(¡\s*)?que\s/.test(inicio) && !marcas.some(x=>x.tipo==="deseo")){ const i=low.indexOf("que"); marcas.push({i,fin:i+3,tipo:"deseo",txt:texto.slice(i,i+3)}); }
+    marcas.sort((a,b)=>a.i-b.i);
+    const n={cert:0,duda:0,deseo:0}; marcas.forEach(x=>n[x.tipo]++);
+    return {marcas,n};
+  }
+  function pintarDet(){
+    const texto=$("#det-in").value.slice(0,400), r=detectar(texto);
+    let html="", pos=0; r.marcas.forEach(x=>{ html+=esc(texto.slice(pos,x.i))+'<span class="p '+x.tipo+'">'+esc(x.txt)+'</span>'; pos=x.fin; }); html+=esc(texto.slice(pos));
+    $("#det-frase").innerHTML=html||"&nbsp;";
+    let modo="cert", txt;
+    const lista=t=>r.marcas.filter(x=>x.tipo===t).map(x=>"«"+esc(x.txt.toLowerCase())+"»"+(x.cond?" (condicional)":"")).join(", ");
+    if(!texto.trim()){ txt="Escribe una frase para analizarla."; }
+    else if(r.n.deseo && r.n.deseo>=r.n.duda){ modo="deseo"; txt="<b>Pide.</b> Encontré pistas de deseo u orden: "+lista("deseo")+". Quien escribe quiere que algo pase, o que tú hagas algo."+(r.n.duda?" También hay duda: "+lista("duda")+".":""); }
+    else if(r.n.duda){ modo="duda"; txt="<b>Sospecha.</b> Encontré pistas de duda: "+lista("duda")+". Quien escribe no se compromete del todo con lo que dice."+(r.n.deseo?" También hay deseo: "+lista("deseo")+".":""); }
+    else if(r.n.cert){ txt="<b>Afirma, y con énfasis.</b> Pistas de certeza: "+lista("cert")+". Que suene tan seguro no lo hace verdad: busca las pruebas."; }
+    else { txt="<b>Afirma.</b> No encontré pistas de duda ni de deseo: la frase se presenta como un hecho. Que sea cierta es otro asunto."; }
+    $("#det-aguja").style.transform="rotate("+ANG[modo]+"deg)"; $("#det-ver").innerHTML=txt;
+  }
+  let tDet; $("#det-in").addEventListener("input",()=>{clearTimeout(tDet); tDet=setTimeout(pintarDet,180);});
+  $$("#det-ej button").forEach(b=>b.addEventListener("click",()=>{ $("#det-in").value=b.textContent; pintarDet(); }));
+  pintarDet();
+
+  /* ---------- actividad ---------- */
+  const EJ=[
+    {s:["Ojalá que el profe ",0," el quiz de mañana. El profe confirmó que el quiz ",1," mañana a las siete."],r:["cancele","es"],f:["cancele","es","cancela","sea"]},
+    {s:["Es posible que ",0," tarde, hay mucho trancón. Si las elecciones fueran hoy, ",1," segunda vuelta."],r:["llegue","habría"],f:["llego","habría","llegue","hay"]},
+    {s:["No creo que esa noticia ",0," cierta. ",1," ya la app y recibe un descuento."],r:["sea","Descarga"],f:["es","Descargas","sea","Descarga"]}
+  ];
+  let ei=0, sel=null, puesto=[null,null], comprobado=false;
+  function pintarEJ(){
+    const e=EJ[ei]; puesto=[null,null]; sel=null; comprobado=false;
+    $("#act-cont").textContent=(ei+1)+" de "+EJ.length; $("#act-msg").textContent=""; $("#act-btn").textContent="Comprobar";
+    $("#act-frase").innerHTML=e.s.map(x=>typeof x==="number"?'<button class="hueco" data-h="'+x+'" aria-label="Espacio '+(x+1)+'">…</button>':x).join("");
+    $("#act-banco").innerHTML=e.f.map((w,i)=>'<button class="ficha" data-w="'+i+'" aria-pressed="false">'+w+'</button>').join("");
+    $$(".ficha").forEach(b=>b.addEventListener("click",()=>{ if(comprobado) return; sel=+b.dataset.w; $$(".ficha").forEach(x=>x.setAttribute("aria-pressed",String(x===b))); }));
+    $$(".hueco").forEach(h=>h.addEventListener("click",()=>{
+      if(comprobado) return; const k=+h.dataset.h;
+      if(sel===null){ if(puesto[k]!==null){ puesto[k]=null; h.textContent="…"; h.classList.remove("lleno"); refrescar(); } return; }
+      const otro=puesto.indexOf(sel); if(otro>-1){ puesto[otro]=null; const ho=$('.hueco[data-h="'+otro+'"]'); ho.textContent="…"; ho.classList.remove("lleno"); }
+      puesto[k]=sel; h.textContent=EJ[ei].f[sel]; h.classList.add("lleno"); sel=null; $$(".ficha").forEach(x=>x.setAttribute("aria-pressed","false")); refrescar();
+    }));
+  }
+  function refrescar(){ $$(".ficha").forEach(b=>b.disabled=puesto.includes(+b.dataset.w)); }
+  $("#act-btn").addEventListener("click",()=>{
+    const e=EJ[ei];
+    if(comprobado){ if(ei<EJ.length-1){ei++; pintarEJ();} return; }
+    if(puesto.includes(null)){ $("#act-msg").textContent="Llena los dos espacios antes de comprobar."; return; }
+    comprobado=true; let ok=true;
+    $$(".hueco").forEach(h=>{ const k=+h.dataset.h, bien=e.f[puesto[k]]===e.r[k]; ok=ok&&bien; h.classList.add(bien?"bien":"mal"); if(!bien) h.textContent=e.f[puesto[k]]+" → "+e.r[k]; });
+    $("#act-msg").textContent=ok?"¡Bien hecho! Tu oído de hablante nativo no falla.":"Casi. Mira la forma correcta en el espacio marcado.";
+    anotar("a-"+ei,ok);
+    $("#act-btn").textContent=ei<EJ.length-1?"Siguiente":"Terminado"; if(ei===EJ.length-1) $("#act-btn").disabled=true;
+  });
+  pintarEJ();
+
+  /* ---------- pregunta final ---------- */
+  const FIN={o:["Afirma con certeza que las redes sociales destruyen la concentración.","Considera que la relación es posible, pero que no está demostrada.","Desea que los adolescentes dejen de usar redes sociales.","Rechaza que exista cualquier relación entre ambas cosas."],c:1,
+    e:"El autor usa «podrían», «sugieren», «es posible que influyan» y «sería necesario»: todo el fragmento está en el terreno de la hipótesis. No afirma con certeza, no expresa un deseo ni da órdenes, y tampoco niega la relación."};
+  $("#final-op").innerHTML=FIN.o.map((x,i)=>"<button class='opcion' data-i='"+i+"'>"+x+"</button>").join("");
+  $$("#final-op .opcion").forEach(b=>b.addEventListener("click",()=>{
+    const i=+b.dataset.i, ok=i===FIN.c;
+    $$("#final-op .opcion").forEach((x,j)=>{x.disabled=true; if(j===FIN.c) x.classList.add("bien"); else if(j===i) x.classList.add("mal");});
+    $("#final-exp").innerHTML='<p class="explica"><strong>'+(ok?"¡Exacto! ":"Casi. ")+'</strong>'+FIN.e+'</p>'; anotar("final",ok);
+  }));
+})();
+</script>
+
+</body>
+</html>
